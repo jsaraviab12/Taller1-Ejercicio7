@@ -60,7 +60,7 @@ public class Interfaz7 extends javax.swing.JFrame {
         jPanel1.add(txtAnios, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 90, -1));
 
         txtBono.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
-        txtBono.setForeground(new java.awt.Color(0, 255, 0));
+        txtBono.setForeground(new java.awt.Color(0, 204, 51));
         txtBono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBonoActionPerformed(evt);
@@ -81,6 +81,11 @@ public class Interfaz7 extends javax.swing.JFrame {
         cmdBorrar.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdBorrar.setForeground(new java.awt.Color(153, 0, 0));
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 18)); // NOI18N
@@ -120,6 +125,12 @@ public class Interfaz7 extends javax.swing.JFrame {
      }
     
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+       txtBono.setText("");
+       txtAnios.setText("");
+       txtAnios.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
