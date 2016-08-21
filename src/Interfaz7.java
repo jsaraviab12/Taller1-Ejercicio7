@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -68,6 +71,11 @@ public class Interfaz7 extends javax.swing.JFrame {
         cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdCalcular.setForeground(new java.awt.Color(0, 153, 51));
         cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 90, 30));
 
         cmdBorrar.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
@@ -96,6 +104,22 @@ public class Interfaz7 extends javax.swing.JFrame {
     private void txtBonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBonoActionPerformed
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+     String res1;
+     int anios,n1,bono;
+     if (txtAnios.getText().trim().isEmpty() ){
+             JOptionPane.showMessageDialog(this,"Por favor digiete la cantidad de años laborados en la empresa","Error",JOptionPane.ERROR_MESSAGE);
+            txtAnios.requestFocusInWindow();
+     }else{
+     anios= Integer.parseInt(txtAnios.getText());
+     n1=(anios-1)*120000;
+     bono=n1+100000;
+     res1=String.valueOf(bono);
+     txtBono.setText(res1);
+     }
+    
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments
