@@ -64,7 +64,7 @@ public class Interfaz7 extends javax.swing.JFrame {
                 txtAniosKeyTyped(evt);
             }
         });
-        jPanel1.add(txtAnios, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 90, -1));
+        jPanel1.add(txtAnios, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 30, -1));
 
         txtBono.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
         txtBono.setForeground(new java.awt.Color(0, 204, 51));
@@ -147,8 +147,10 @@ public class Interfaz7 extends javax.swing.JFrame {
           if(!Character.isDigit(evt.getKeyChar())){ 
               getToolkit().beep(); 
                
-              evt.consume(); 
+              evt.consume();
+               
           }
+          
     }//GEN-LAST:event_txtAniosKeyTyped
 
     /**
