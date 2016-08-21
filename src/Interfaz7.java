@@ -18,6 +18,8 @@ public class Interfaz7 extends javax.swing.JFrame {
      */
     public Interfaz7() {
         initComponents();
+        txtBono.setEditable(false);
+       
     }
 
     /**
@@ -57,6 +59,11 @@ public class Interfaz7 extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
         txtAnios.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtAnios.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAniosKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtAnios, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 90, -1));
 
         txtBono.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
@@ -66,7 +73,7 @@ public class Interfaz7 extends javax.swing.JFrame {
                 txtBonoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtBono, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 90, -1));
+        jPanel1.add(txtBono, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 180, -1));
 
         cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdCalcular.setForeground(new java.awt.Color(0, 153, 51));
@@ -122,6 +129,7 @@ public class Interfaz7 extends javax.swing.JFrame {
      bono=n1+100000;
      res1=String.valueOf(bono);
      txtBono.setText(res1);
+     
      }
     
     }//GEN-LAST:event_cmdCalcularActionPerformed
@@ -131,6 +139,17 @@ public class Interfaz7 extends javax.swing.JFrame {
        txtAnios.setText("");
        txtAnios.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtAniosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAniosKeyTyped
+       char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())){ 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtAniosKeyTyped
 
     /**
      * @param args the command line arguments
